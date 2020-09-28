@@ -1,5 +1,5 @@
-public class ConditionalStatement {	
-   public static void main(String[] args) {
+public class ConditionalStatement {
+	public static void main(String[] args) {
     int age = 26;
     String sex = "Мужчина";
     double height = 1.85;
@@ -22,5 +22,5 @@ public class ConditionalStatement {
     	else
     		System.out.println("Ваше имя начинается с буквы " + Name);
     }
-	}
+  }
 }
