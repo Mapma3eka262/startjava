@@ -1,5 +1,5 @@
 public class Calculator {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
     char choose = '%';  // Введите математическое выражение
     int first = 39;		// Введите 1 число для математических операций
     int second = 7;		// Введите 2 число для математических операций
