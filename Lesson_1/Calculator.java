@@ -1,9 +1,9 @@
 public class Calculator {
     public static void main(String[] args) {
-        char operation = '%';  // Мат. знак
-        int firstNum = 39;     // Введите 1 число для математических операций
-        int secondNum = 7;     // Введите 2 число для математических операций
-        double result = 0;
+        char operation = '^';  // Мат. знак
+        int firstNum = 4;     // Введите 1 число для математических операций
+        int secondNum = 3;     // Введите 2 число для математических операций
+        double result = 1;
 
         if (operation == '+') {
             System.out.println("Выбран математический знак: " + operation);
@@ -24,13 +24,9 @@ public class Calculator {
         } else if (operation == '^') {
             System.out.println("Выбран математический знак: " + operation);
             for (int i = 0; i < secondNum; i++) {
-                if (i == 0) {
-                    result = firstNum;
-                } else {
-                    result *= firstNum;
-                }
+                result *= firstNum;
             }
-            System.out.println("Результат возведения числа " + secondNum + " в степень 3: " + result);
+            System.out.println("Результат возведения числа " + firstNum + " в степень " + secondNum + ": " + result);
         } else {
             System.out.println("Выбран математический знак: " + operation);
             result = firstNum % secondNum;

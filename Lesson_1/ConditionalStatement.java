@@ -6,7 +6,7 @@ public class ConditionalStatement {
         } 
 
         String sex = "Мужчина";
-        if (sex.equals("Мужчина")){
+        if (sex.equals("Мужчина")) {
             System.out.println("Вы мужского пола");
         } else {
             System.out.println("Вы не мужского пола");
