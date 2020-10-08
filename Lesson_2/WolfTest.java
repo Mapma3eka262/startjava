@@ -11,7 +11,7 @@ public class WolfTest {
         wildWolf.setWeight(40.5f);
         System.out.println("Вес: " + wildWolf.getWeight());
         
-        wildWolf.setAge(5);
+        wildWolf.setAge(13);
         if (wildWolf.getAge() < 8 & wildWolf.getAge() > 0) {
             System.out.println("Возраст: " + wildWolf.getAge());
         } 
@@ -22,7 +22,5 @@ public class WolfTest {
         wildWolf.run();
         System.out.println(wildWolf.howl());
         System.out.println(wildWolf.hunt());
-
-
     }
 }
