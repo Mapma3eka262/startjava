@@ -12,7 +12,7 @@ public class WolfTest {
         System.out.println("Вес: " + wildWolf.getWeight());
         
         wildWolf.setAge(13);
-        if (wildWolf.getAge() < 8 & wildWolf.getAge() > 0) {
+        if (wildWolf.getAge() < 8 && wildWolf.getAge() > 0) {
             System.out.println("Возраст: " + wildWolf.getAge());
         } 
         wildWolf.setColor("Серый");
