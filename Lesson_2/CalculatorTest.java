@@ -2,11 +2,12 @@ import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main(String[] args) {
-        String again = "yes";
+        String again;
         Scanner sc = new Scanner(System.in);
         Calculator calculator = new Calculator();
 
-        while (again.equals("yes")) {
+        do {
+            again = "";
             System.out.print("Введите первое число: ");
             int firstNum = sc.nextInt();
             sc.nextLine();
@@ -19,16 +20,13 @@ public class CalculatorTest {
             int secondNum = sc.nextInt();
             sc.nextLine();
 
-            calculator.operation(firstNum, operation, secondNum);
+            calculator.calculate(firstNum, operation, secondNum);
             
-            System.out.print("Хотите продолжить? [yes/no]: ");
-            again = sc.nextLine();
 
             while (!again.equals("yes") && !again.equals("no")) {
-                System.out.println("Некорректное значение");
                 System.out.print("Хотите продолжить? [yes/no]: ");
                 again = sc.nextLine();
             }
-        }
+        } while (again.equals("yes"));
     }
 }
