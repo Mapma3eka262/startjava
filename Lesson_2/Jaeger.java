@@ -1,99 +1,92 @@
 public class Jaeger {
     
     private String modelName;
-    
-    public String getModelName(){
+    private String mark;
+    private String origin;
+    private float height;
+    private float weight;
+    private int speed;
+    private int strength;
+    private int armor;
+        
+    public String getModelName() {
         return modelName;
     }
     
-    public void setModelName(String modelName){
+    public void setModelName(String modelName) {
         this.modelName = modelName;
     }
     
-    private String mark;
-    
-    public String getMark(){
+    public String getMark() {
         return mark;
     }
     
-    public void setMark(String mark){
+    public void setMark(String mark) {
         this.mark = mark;
     }
-    
-    private String origin;
-    
-    public String getOrigin(){
+        
+    public String getOrigin() {
         return origin;
     }
     
-    public void setOrigin(String origin){
+    public void setOrigin(String origin) {
         this.origin = origin;
     }
-    
-    private float height;
-    
-    public float getHeight(){
+        
+    public float getHeight() {
         return height;
     }
     
-    public void setHeight(float height){
+    public void setHeight(float height) {
         this.height = height;
     }
     
-    private float weight;
-    
-    public float getWeight(){
+    public float getWeight() {
         return weight;
     }
     
-    public void setWeight(float weight){
+    public void setWeight(float weight) {
         this.weight = weight;
     }
     
-    private int speed;
-    
-    public int getSpeed(){
+    public int getSpeed() {
         return speed;
     }
     
-    public void setSpeed(int speed){
+    public void setSpeed(int speed) {
         this.speed = speed;
     }
-    
-    private int strength;
-    
-    public int getStrength(){
+        
+    public int getStrength() {
         return strength;
     }
     
-    public void setStrength(int strength){
+    public void setStrength(int strength) {
         this.strength = strength;
     }
-    
-    private int armor;
-    
-    public int getArmor(){
+        
+    public int getArmor() {
         return armor;
     }
     
-    public void setArmor(int armor){
+    public void setArmor(int armor) {
         this.armor = armor;
     }
     
-    public boolean drift(){
+    public boolean drift() {
         System.out.println("You entered drift");
         return true;
     }
     
-    public void move(){
+    public void move() {
         System.out.println(modelName + " started moving");
     }
     
-    public String ActivationEC(String energyCore){
+    public String ActivationEC(String energyCore) {
         return energyCore + " activate";        
     }
     
-    public String useWeapon(String weapon){
+    public String useWeapon(String weapon) {
         return "Jaeger " + modelName + " started using " + weapon;
     }
 }

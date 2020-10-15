@@ -1,75 +1,75 @@
 public class JaegerTest {
     public static void main (String[] args){
-        Jaeger firstJaeger = new Jaeger();
-        Jaeger secondJaeger = new Jaeger();
+        Jaeger jaegerOne = new Jaeger();
+        Jaeger jaegerTwo = new Jaeger();
         
         System.out.println("Creation first Jaeger");
         
-        firstJaeger.setModelName("Cherno Alpha");
-        System.out.println("ModelName " + firstJaeger.getModelName());
+        jaegerOne.setModelName("Cherno Alpha");
+        System.out.println("ModelName " + jaegerOne.getModelName());
         
-        firstJaeger.setMark("Mark-1");
-        System.out.println("Mark " + firstJaeger.getMark());
+        jaegerOne.setMark("Mark-1");
+        System.out.println("Mark " + jaegerOne.getMark());
         
-        firstJaeger.setOrigin("Russia");
-        System.out.println("Origin " + firstJaeger.getOrigin());
+        jaegerOne.setOrigin("Russia");
+        System.out.println("Origin " + jaegerOne.getOrigin());
         
-        firstJaeger.setHeight(85.34f);
-        System.out.println("Height " + firstJaeger.getHeight());
+        jaegerOne.setHeight(85.34f);
+        System.out.println("Height " + jaegerOne.getHeight());
         
-        firstJaeger.setWeight(2.412f);
-        System.out.println("Weight " + firstJaeger.getWeight());
+        jaegerOne.setWeight(2.412f);
+        System.out.println("Weight " + jaegerOne.getWeight());
         
-        firstJaeger.setSpeed(3);
-        System.out.println("Speed " + firstJaeger.getSpeed());
+        jaegerOne.setSpeed(3);
+        System.out.println("Speed " + jaegerOne.getSpeed());
         
-        firstJaeger.setStrength(10);
-        System.out.println("Strength " + firstJaeger.getStrength());
+        jaegerOne.setStrength(10);
+        System.out.println("Strength " + jaegerOne.getStrength());
         
-        firstJaeger.setArmor(10);
-        System.out.println("Armor " + firstJaeger.getArmor());
+        jaegerOne.setArmor(10);
+        System.out.println("Armor " + jaegerOne.getArmor());
         
-        firstJaeger.drift();
+        jaegerOne.drift();
         
-        System.out.println(firstJaeger.ActivationEC("Stun Core 08"));
+        System.out.println(jaegerOne.ActivationEC("Stun Core 08"));
                 
-        firstJaeger.move();
+        jaegerOne.move();
         
-        System.out.println(firstJaeger.useWeapon("Z-14 Tesla fists \n"));
+        System.out.println(jaegerOne.useWeapon("Z-14 Tesla fists \n"));
         
         System.out.println("Creation second Jaeger");
         
-        secondJaeger.setModelName("Coyote Tango");
-        System.out.println("ModelName " + secondJaeger.getModelName());
+        jaegerTwo.setModelName("Coyote Tango");
+        System.out.println("ModelName " + jaegerTwo.getModelName());
         
-        secondJaeger.setMark("Mark-1");
-        System.out.println("Mark " + secondJaeger.getMark());
+        jaegerTwo.setMark("Mark-1");
+        System.out.println("Mark " + jaegerTwo.getMark());
         
-        secondJaeger.setOrigin("Japan");
-        System.out.println("Origin " + secondJaeger.getOrigin());
+        jaegerTwo.setOrigin("Japan");
+        System.out.println("Origin " + jaegerTwo.getOrigin());
         
-        secondJaeger.setHeight(85.34f);
-        System.out.println("Height " + secondJaeger.getHeight());
+        jaegerTwo.setHeight(85.34f);
+        System.out.println("Height " + jaegerTwo.getHeight());
         
-        secondJaeger.setWeight(2.312f);
-        System.out.println("Weight " + secondJaeger.getWeight());
+        jaegerTwo.setWeight(2.312f);
+        System.out.println("Weight " + jaegerTwo.getWeight());
         
-        secondJaeger.setSpeed(5);
-        System.out.println("Speed " + secondJaeger.getSpeed());
+        jaegerTwo.setSpeed(5);
+        System.out.println("Speed " + jaegerTwo.getSpeed());
         
-        secondJaeger.setStrength(7);
-        System.out.println("Strength " + secondJaeger.getStrength());
+        jaegerTwo.setStrength(7);
+        System.out.println("Strength " + jaegerTwo.getStrength());
         
-        secondJaeger.setArmor(4);
-        System.out.println("Armor " + secondJaeger.getArmor());
+        jaegerTwo.setArmor(4);
+        System.out.println("Armor " + jaegerTwo.getArmor());
         
-        secondJaeger.drift();
+        jaegerTwo.drift();
         
-        System.out.println(secondJaeger.ActivationEC("Iso-thor reaction chamber"));
+        System.out.println(jaegerTwo.ActivationEC("Iso-thor reaction chamber"));
         
-        secondJaeger.move();
+        jaegerTwo.move();
         
-        System.out.println(secondJaeger.useWeapon("Ballistic mortar cannons"));
+        System.out.println(jaegerTwo.useWeapon("Ballistic mortar cannons"));
         
     }
 }
