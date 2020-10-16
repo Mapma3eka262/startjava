@@ -1,75 +1,60 @@
 public class JaegerTest {
     public static void main (String[] args){
-        Jaeger jaegerOne = new Jaeger();
-        Jaeger jaegerTwo = new Jaeger();
+        Jaeger сhernoAlpha = new Jaeger("Cherno Alpha","Mark-1","Russia",85.34f,2.412f,3,10,10);
+        Jaeger сoyoteTango = new Jaeger("Coyote Tango","Mark-1","Japan",85.34f,2.312f,5,7,4);
         
         System.out.println("Creation first Jaeger");
+       
+        System.out.println("ModelName " + сhernoAlpha.getModelName());
         
-        jaegerOne.setModelName("Cherno Alpha");
-        System.out.println("ModelName " + jaegerOne.getModelName());
+        System.out.println("Mark " + сhernoAlpha.getMark());
         
-        jaegerOne.setMark("Mark-1");
-        System.out.println("Mark " + jaegerOne.getMark());
+        System.out.println("Origin " + сhernoAlpha.getOrigin());
         
-        jaegerOne.setOrigin("Russia");
-        System.out.println("Origin " + jaegerOne.getOrigin());
+        System.out.println("Height " + сhernoAlpha.getHeight());
         
-        jaegerOne.setHeight(85.34f);
-        System.out.println("Height " + jaegerOne.getHeight());
+        System.out.println("Weight " + сhernoAlpha.getWeight());
         
-        jaegerOne.setWeight(2.412f);
-        System.out.println("Weight " + jaegerOne.getWeight());
+        System.out.println("Speed " + сhernoAlpha.getSpeed());
         
-        jaegerOne.setSpeed(3);
-        System.out.println("Speed " + jaegerOne.getSpeed());
+        System.out.println("Strength " + сhernoAlpha.getStrength());
         
-        jaegerOne.setStrength(10);
-        System.out.println("Strength " + jaegerOne.getStrength());
+        System.out.println("Armor " + сhernoAlpha.getArmor());
         
-        jaegerOne.setArmor(10);
-        System.out.println("Armor " + jaegerOne.getArmor());
+        сhernoAlpha.drift();
         
-        jaegerOne.drift();
-        
-        System.out.println(jaegerOne.ActivationEC("Stun Core 08"));
+        System.out.println(сhernoAlpha.ActivationEC("Stun Core 08"));
                 
-        jaegerOne.move();
+        сhernoAlpha.move();
         
-        System.out.println(jaegerOne.useWeapon("Z-14 Tesla fists \n"));
+        System.out.println(сhernoAlpha.useWeapon("Z-14 Tesla fists \n"));
         
         System.out.println("Creation second Jaeger");
         
-        jaegerTwo.setModelName("Coyote Tango");
-        System.out.println("ModelName " + jaegerTwo.getModelName());
+        System.out.println("ModelName " + сoyoteTango.getModelName());
         
-        jaegerTwo.setMark("Mark-1");
-        System.out.println("Mark " + jaegerTwo.getMark());
+        System.out.println("Mark " + сoyoteTango.getMark());
         
-        jaegerTwo.setOrigin("Japan");
-        System.out.println("Origin " + jaegerTwo.getOrigin());
+        System.out.println("Origin " + сoyoteTango.getOrigin());
         
-        jaegerTwo.setHeight(85.34f);
-        System.out.println("Height " + jaegerTwo.getHeight());
+        System.out.println("Height " + сoyoteTango.getHeight());
         
-        jaegerTwo.setWeight(2.312f);
-        System.out.println("Weight " + jaegerTwo.getWeight());
+        System.out.println("Weight " + сoyoteTango.getWeight());
         
-        jaegerTwo.setSpeed(5);
-        System.out.println("Speed " + jaegerTwo.getSpeed());
+        System.out.println("Speed " + сoyoteTango.getSpeed());
         
-        jaegerTwo.setStrength(7);
-        System.out.println("Strength " + jaegerTwo.getStrength());
+        System.out.println("Strength " + сoyoteTango.getStrength());
         
-        jaegerTwo.setArmor(4);
-        System.out.println("Armor " + jaegerTwo.getArmor());
+        System.out.println("Armor " + сoyoteTango.getArmor());
         
-        jaegerTwo.drift();
+        сoyoteTango.drift();
         
-        System.out.println(jaegerTwo.ActivationEC("Iso-thor reaction chamber"));
+        System.out.println(сoyoteTango.ActivationEC("Iso-thor reaction chamber"));
         
-        jaegerTwo.move();
+        сoyoteTango.move();
         
-        System.out.println(jaegerTwo.useWeapon("Ballistic mortar cannons"));
+        System.out.println(сoyoteTango.useWeapon("Ballistic mortar cannons"));
+        
         
     }
 }
