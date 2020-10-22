@@ -10,36 +10,21 @@ public class GuessNumberTest {
         do {
             int hiddenNum = random.nextInt(100 + 1);
         
-            System.out.println("Введите имя первого игрока и загаданное число");
-            Player playerOne = new Player(scan.nextLine(),scan.nextInt());
-            scan.nextLine();
-            System.out.println("Введите имя второго игрока и загаданное число");
-            Player playerTwo = new Player(scan.nextLine(),scan.nextInt());
+            System.out.println("Введите имя первого игрока");
+            Player playerOne = new Player(scan.nextLine(),0);
+            System.out.println("Введите имя второго игрока");
+            Player playerTwo = new Player(scan.nextLine(),0);
             
-            
+            GuessNumber guessNumber = new GuessNumber(playerOne.getName(),playerTwo.getName(),hiddenNum);
             
             while (playerOne.getNumber() != hiddenNum && playerTwo.getNumber() != hiddenNum) {
-                GuessNumber playerOneGuess = new GuessNumber(playerOne.getName(),playerOne.getNumber(),hiddenNum);
-                if (playerOne.getNumber() != hiddenNum) {
-                    GuessNumber playerTwoGuess = new GuessNumber(playerTwo.getName(),playerTwo.getNumber(),hiddenNum);
-                }
-
-                if (playerOne.getNumber()!=hiddenNum && playerTwo.getNumber()!=hiddenNum) {
-                    System.out.println("Игрок " + playerOne.getName() + " введите новое число");
-                    playerOne.setNumber(scan.nextInt());
-                    System.out.println("Игрок " + playerTwo.getName() + " введите новое число");
-                    playerTwo.setNumber(scan.nextInt());
-                    scan.nextLine();
-                }
-            }
-            
-            
-            if (playerOne.getNumber()==hiddenNum && playerTwo.getNumber()!=hiddenNum) {
-                System.out.println("Игрок " + playerOne.getName() + " победил");
-            } else if (playerTwo.getNumber()==hiddenNum && playerOne.getNumber()!=hiddenNum) {
-                System.out.println("Игрок " + playerTwo.getName() + " победил");
-            } else {
-                System.out.println("Игрок " + playerOne.getName() + " победил");
+                System.out.println("Игрок " + playerOne.getName() + " введите число");
+                playerOne.setNumber(scan.nextInt());
+                System.out.println("Игрок " + playerTwo.getName() + " введите число");
+                playerTwo.setNumber(scan.nextInt());
+                scan.nextLine();
+                
+                guessNumber.Guess(playerOne.getNumber(),playerTwo.getNumber());
             }
             
             do {
