@@ -1,10 +1,9 @@
 public class Player {
     private String name;
-    private int number;
+    private int number = 0;
     
-    public Player(String name, int number) {
+    public Player(String name) {
         this.name = name;
-        this.number = number;
     }
     
     public String getName(){
