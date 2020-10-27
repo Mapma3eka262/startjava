@@ -22,20 +22,17 @@ public class GuessNumber {
             if (playerOne.getNumber() != hiddenNum) {
                 if (playerOne.getNumber() > hiddenNum) {
                     System.out.println("Число введенное игроком " + playerOne.getName() + " больше загаданного");
-                    System.out.println("Игрок " + playerTwo.getName() + " введите число");
-                    playerTwo.setNumber(scan.nextInt());
-                    scan.nextLine();
                 } else {
                     System.out.println("Число введенное игроком " + playerOne.getName() + " меньше загаданного");
-                    System.out.println("Игрок " + playerTwo.getName() + " введите число");
-                    playerTwo.setNumber(scan.nextInt());
-                    scan.nextLine();
                 }
             } else {
                 System.out.println("Игрок " + playerOne.getName() + " победил");   
                 break;
             }
             
+            System.out.println("Игрок " + playerTwo.getName() + " введите число");
+            playerTwo.setNumber(scan.nextInt());
+            scan.nextLine();
             if (playerTwo.getNumber() != hiddenNum) {
                 if (playerTwo.getNumber() > hiddenNum) {
                     System.out.println("Число введенное игроком " + playerTwo.getName() + " больше загаданного");
