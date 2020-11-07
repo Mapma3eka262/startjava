@@ -1,3 +1,5 @@
+package com.startjava.lesson_2.calculator;
+
 public class Calculator {
     private double result;
 
@@ -26,7 +28,7 @@ public class Calculator {
                 break;
             default:
                 System.out.println("Введены некорректные данные");
-            System.out.println("Результат: " + result);
         }
+        System.out.println("Результат: " + result);
     }
 }

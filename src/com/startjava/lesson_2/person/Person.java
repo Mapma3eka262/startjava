@@ -1,8 +1,10 @@
+package com.startjava.lesson_2.person;
+
 public class Person {
     String sex = "Мужской";
     String Name = "Вася";
     int height = 185;
-    float weight 83.5f;
+    float weight = 83.5f;
     int age = 34;
     
     void move() {
