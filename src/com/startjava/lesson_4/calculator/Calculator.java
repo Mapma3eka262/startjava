@@ -5,34 +5,31 @@ import static java.lang.Math.*;
 public class Calculator {
     private double result;
 
-    public int calculate(String operation){
-        String[] items = operation.split(" ", 3);
+    public double calculate(String expression) {
+        String[] items = expression.split(" ", 3);
+        int firstNumber = Integer.parseInt(items[0]);
+        int secondNumber = Integer.parseInt(items[2]);
 
         switch(items[1]) {
             case "+":
-                result = addExact(Integer.parseInt(items[0]), Integer.parseInt(items[2]));
-                break;
+                return addExact(firstNumber, secondNumber);
             case "-":
-                result = subtractExact(Integer.parseInt(items[0]), Integer.parseInt(items[2]));
-                break;
+                return  subtractExact(firstNumber, secondNumber);
             case "*":
-                result = multiplyExact(Integer.parseInt(items[0]), Integer.parseInt(items[2]));
-                break;
+                return  multiplyExact(firstNumber, secondNumber);
             case "/":
-                result = floorDiv(Integer.parseInt(items[0]), Integer.parseInt(items[2]));
-                break;
+                return  floorDiv(firstNumber, secondNumber);
             case "^":
                 result = 1;
-                for (int i = 0; i < Integer.parseInt(items[2]); i++) {
-                    result *= Integer.parseInt(items[0]);
+                for (int i = 0; i < secondNumber; i++) {
+                    result *= firstNumber;
                 }
-                break;
+                return result;
             case "%":
-                result = floorMod(Integer.parseInt(items[0]), Integer.parseInt(items[2]));
-                break;
+                return floorMod(firstNumber, secondNumber);
             default:
                 System.out.println("Введены некорректные данные");
         }
-        return (int) result;
+        return 0;
     }
 }
