@@ -18,26 +18,27 @@ public class GuessNumber {
     public void start() {
         hiddenNum = random.nextInt(100 + 1);
         System.out.println("У вас 10 попыток");
-        int chance = 0;
+        int Try = 0;
 
-        while (chance != 10) {
+        while (Try != 10) {
             System.out.println("Игрок " + playerOne.getName() + " введите число");
             playerOne.setNumber(scan.nextInt());
-            playerOne.setChance(chance);
+            playerOne.setTry(Try);
+            playerOne.setEneteredNumbers(Try,playerOne.getNumber());
             if (playerOne.getNumber() != hiddenNum) {
                 if (playerOne.getNumber() > hiddenNum) {
                     System.out.println("Число введенное игроком " + playerOne.getName() + " больше загаданного");
-                    if (chance==9) {
+                    if (Try==9) {
                         System.out.println("У " + playerOne.getName() + " закончились попытки");
                     }
                 } else {
                     System.out.println("Число введенное игроком " + playerOne.getName() + " меньше загаданного");
-                    if (chance==9) {
+                    if (Try==9) {
                         System.out.println("У " + playerOne.getName() + " закончились попытки");
                     }
                 }
             } else {
-                System.out.println("Игрок " + playerOne.getName() + " угадал число " + hiddenNum + " c " + (chance+1) + " попытки");
+                System.out.println("Игрок " + playerOne.getName() + " угадал число " + hiddenNum + " c " + (Try+1) + " попытки");
                 break;
             }
 
@@ -45,25 +46,27 @@ public class GuessNumber {
             System.out.println("Игрок " + playerTwo.getName() + " введите число");
             playerTwo.setNumber(scan.nextInt());
             scan.nextLine();
-            playerTwo.setChance(chance);
+            playerTwo.setTry(Try);
             if (playerTwo.getNumber() != hiddenNum) {
                 if (playerTwo.getNumber() > hiddenNum) {
                     System.out.println("Число введенное игроком " + playerTwo.getName() + " больше загаданного");
-                    if (chance==9) {
+                    if (Try==9) {
                         System.out.println("У " + playerTwo.getName() + " закончились попытки");
                     }
                 } else {
                     System.out.println("Число введенное игроком " + playerTwo.getName() + " меньше загаданного");
-                    if (chance==9) {
+                    if (Try==9) {
                         System.out.println("У " + playerTwo.getName() + " закончились попытки");
                     }
                 }
             } else {
-                System.out.println("Игрок " + playerTwo.getName() + " угадал число " + hiddenNum + " c " + (chance+1) + " попытки");
+                System.out.println("Игрок " + playerTwo.getName() + " угадал число " + hiddenNum + " c " + (Try+1) + " попытки");
                 break;
             }
-
-            chance++;
+            Try++;
         }
+
+        System.out.println("Игроком " + playerOne.getName() + " введены значения:" + playerOne.getEnteredNumbers());
+        System.out.println("Игроком " + playerTwo.getName() + " введены значения:" + playerTwo.getEnteredNumbers());
     }
 }
