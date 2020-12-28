@@ -22,10 +22,10 @@ public class GuessNumber {
         for (int attempt = 0; attempt < 10; attempt++) {
             if (!makeMove(playerOne, attempt)) {
                 if (makeMove(playerTwo, attempt)) {
-                    attempt = 9;
+                    break;
                 }
             } else {
-                attempt = 9;
+                break;
             }
         }
 
@@ -34,11 +34,14 @@ public class GuessNumber {
     }
 
     private boolean makeMove(Player player, int attempt) {
-        int number = inputNumbers(player, attempt);
-        return compareNumber(number, hiddenNumber, player, attempt);
+        if (attempt == 9) {
+            System.out.println("У " + player.getName() + " последняя попытка");
+        }
+        int number = inputNumber(player, attempt);
+        return compareNumber(number, player, attempt);
     }
 
-    private int inputNumbers(Player player, int attempt) {
+    private int inputNumber(Player player, int attempt) {
         System.out.println("Игрок " + player.getName() + " введите число");
         int number = scan.nextInt();
         scan.nextLine();
@@ -46,18 +49,12 @@ public class GuessNumber {
         return number;
     }
 
-    private boolean compareNumber(int number, int hiddenNumber, Player player, int attempt) {
+    private boolean compareNumber(int number, Player player, int attempt) {
         if (number != hiddenNumber) {
             if (number > hiddenNumber) {
                 System.out.println("Число введенное игроком " + player.getName() + " больше загаданного");
-                if (attempt == 9) {
-                    System.out.println("У " + player.getName() + " закончились попытки");
-                }
             } else {
                 System.out.println("Число введенное игроком " + player.getName() + " меньше загаданного");
-                if (attempt == 9) {
-                    System.out.println("У " + player.getName() + " закончились попытки");
-                }
             }
             return false;
         } else {
@@ -67,8 +64,8 @@ public class GuessNumber {
     }
 
     private void outputNumbers(Player player) {
-        System.out.print("Игроком " + playerOne.getName() + " введены значения:");
-        for (int num : playerOne.getEnteredNumbers()) {
+        System.out.print("Игроком " + player.getName() + " введены значения:");
+        for (int num : player.getEnteredNumbers()) {
             System.out.print(num + " ");
         }
         System.out.println("");
