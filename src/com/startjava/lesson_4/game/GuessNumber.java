@@ -1,5 +1,6 @@
 package com.startjava.lesson_4.game;
 
+import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -51,11 +52,9 @@ public class GuessNumber {
 
     private boolean compareNumber(int number, Player player, int attempt) {
         if (number != hiddenNumber) {
-            if (number > hiddenNumber) {
-                System.out.println("Число введенное игроком " + player.getName() + " больше загаданного");
-            } else {
-                System.out.println("Число введенное игроком " + player.getName() + " меньше загаданного");
-            }
+            String moreHiddenNumber = "Число введенное игроком " + player.getName() + " больше загаданного";
+            String lessHiddenNumber = "Число введенное игроком " + player.getName() + " меньше загаданного";
+            System.out.println((number > hiddenNumber) ? moreHiddenNumber : lessHiddenNumber);
             return false;
         } else {
             System.out.println("Игрок " + player.getName() + " угадал число " + hiddenNumber + " c " + (attempt + 1) + " попытки");
@@ -65,8 +64,8 @@ public class GuessNumber {
 
     private void outputNumbers(Player player) {
         System.out.print("Игроком " + player.getName() + " введены значения:");
-        for (int num : player.getEnteredNumbers()) {
-            System.out.print(num + " ");
+        for (int number : player.getEnteredNumbers()) {
+            System.out.print(number + " ");
         }
         System.out.println("");
     }
