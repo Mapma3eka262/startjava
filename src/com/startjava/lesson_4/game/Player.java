@@ -14,13 +14,17 @@ public class Player {
     public String getName() {
         return name;
     }
+
+    public int getAttempt() {
+        return attempt;
+    }
     
     public int[] getEnteredNumbers() {
-        return Arrays.copyOf(enteredNumbers, attempt + 1);
+        return Arrays.copyOf(enteredNumbers, attempt);
     }
 
     public void setEnteredNumber(int attempt, int number) {
-        this.attempt = attempt;
+        this.attempt++;
         enteredNumbers[attempt] = number;
     }
 }

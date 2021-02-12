@@ -9,7 +9,7 @@ public class GuessNumber {
     private Scanner scan = new Scanner(System.in);
     private Player playerOne;
     private Player playerTwo;
-    private int constant = 10;
+    private int maxNumberOfAttempts = 10;
 
     public GuessNumber(Player playerOne, Player playerTwo) {
         this.playerOne = playerOne;
@@ -20,13 +20,12 @@ public class GuessNumber {
         hiddenNumber = random.nextInt(100 + 1);
         System.out.println("У вас 10 попыток");
 
-        for (int attempt = 0; attempt < constant; attempt++) {
-            if (makeMove(playerOne, attempt, constant)) {
+        for (int attempt = 0; attempt < maxNumberOfAttempts; attempt++) {
+            if (makeMove(playerOne, attempt)) {
                 break;
-            } else {
-                if (makeMove(playerTwo, attempt, constant)) {
-                    break;
-                }
+            }
+            if (makeMove(playerTwo, attempt)) {
+                break;
             }
         }
 
@@ -34,12 +33,12 @@ public class GuessNumber {
         outputNumbers(playerTwo);
     }
 
-    private boolean makeMove(Player player, int attempt, int constant) {
-        if (attempt == constant-1) {
+    private boolean makeMove(Player player, int attempt) {
+        if (attempt == maxNumberOfAttempts-1) {
             System.out.println("У " + player.getName() + " последняя попытка");
         }
         int number = inputNumber(player, attempt);
-        return compareNumber(number, player, attempt);
+        return compareNumber(number, player);
     }
 
     private int inputNumber(Player player, int attempt) {
@@ -50,15 +49,14 @@ public class GuessNumber {
         return number;
     }
 
-    private boolean compareNumber(int number, Player player, int attempt) {
+    private boolean compareNumber(int number, Player player) {
         if (number != hiddenNumber) {
             String compare = (number > hiddenNumber) ? " больше загаданного" : " меньше загаданного";
             System.out.println("Число введенное игроком " + player.getName() + compare);
             return false;
-        } {
-            System.out.println("Игрок " + player.getName() + " угадал число " + hiddenNumber + " c " + (attempt + 1) + " попытки");
-            return true;
         }
+        System.out.println("Игрок " + player.getName() + " угадал число " + hiddenNumber + " c " + (player.getAttempt()) + " попытки");
+        return true;
     }
 
     private void outputNumbers(Player player) {
