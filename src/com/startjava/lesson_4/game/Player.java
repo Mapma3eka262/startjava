@@ -23,8 +23,8 @@ public class Player {
         return Arrays.copyOf(enteredNumbers, attempt);
     }
 
-    public void setEnteredNumber(int attempt, int number) {
-        this.attempt++;
+    public void setEnteredNumber(int number) {
         enteredNumbers[attempt] = number;
+        attempt++;
     }
 }

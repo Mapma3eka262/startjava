@@ -37,22 +37,22 @@ public class GuessNumber {
         if (attempt == maxNumberOfAttempts-1) {
             System.out.println("У " + player.getName() + " последняя попытка");
         }
-        int number = inputNumber(player, attempt);
+        int number = inputNumber(player);
         return compareNumber(number, player);
     }
 
-    private int inputNumber(Player player, int attempt) {
+    private int inputNumber(Player player) {
         System.out.println("Игрок " + player.getName() + " введите число");
         int number = scan.nextInt();
         scan.nextLine();
-        player.setEnteredNumber(attempt, number);
+        player.setEnteredNumber(number);
         return number;
     }
 
     private boolean compareNumber(int number, Player player) {
         if (number != hiddenNumber) {
-            String compare = (number > hiddenNumber) ? " больше загаданного" : " меньше загаданного";
-            System.out.println("Число введенное игроком " + player.getName() + compare);
+            String compare = (number > hiddenNumber) ? " больше" : " меньше";
+            System.out.println("Число введенное игроком " + player.getName() + compare + " загаданного");
             return false;
         }
         System.out.println("Игрок " + player.getName() + " угадал число " + hiddenNumber + " c " + (player.getAttempt()) + " попытки");
